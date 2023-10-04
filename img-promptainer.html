@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Promptainer</title>
+    <style>
+        body {
+	    max-width: 80%;
+   	    margin: auto;
+	    font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            padding: 20px;
+            text-align: center;
+        }
+        select, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        #sentence {
+            font-weight: bold;
+            font-size: 20px;
+            margin-top: 20px;
+            color: #333;
+        }
+	label {
+    	width: 200px;
+	}
+	.flex-container {
+	    display: flex;
+	    align-items: center;
+	    justify-content: flex-start;
+		}
+        #copyBtn {
+            display: none;
+        }
+    </style>
+    <script type="text/javascript">
+        
+    function createSentence() {
+        var emotion = document.getElementById("emotion").value;
+        var size = document.getElementById("size").value;
+        var vibe = document.getElementById("vibe").value;
+        var proximity = document.getElementById("proximity").value;
+        var position = document.getElementById("position").value;
+        var settings = document.getElementById("settings").value;
+        var outdoor = document.getElementById("outdoor").value;
+        var indoor = document.getElementById("indoor").value;
+        var process = document.getElementById("process").value;
+        var type = document.getElementById("type").value;
+        var genre = document.getElementById("genre").value;
+        var illustration = document.getElementById("illustration").value; 
+        var tv = document.getElementById("tv").value; 
+        var history = document.getElementById("history").value; 
+        var artists = document.getElementById("artists").value; 
+        var artwork = document.getElementById("artwork").value;  
+        var places = document.getElementById("places").value;  
+        var crafty = document.getElementById ("crafty").value;
+
+        var sentence = emotion  + " " + size  + " " + vibe  + " " + proximity  + " " + position  + " " + settings  + " " + outdoor  + " " + indoor  + " " + process  + " " + type  + " " + genre  + " " + illustration  + " " + tv  + " " + history  + " " + artists  + " " + artwork  + " " + places  + " " + crafty;
+        document.getElementById("sentence").innerText = sentence;
+        document.getElementById('copyBtn').style.display = 'inline-block';
+    }
+
+    function copyToClipboard() {
+        var sentence = document.getElementById('sentence').innerText;
+        navigator.clipboard.writeText(sentence).then(function() {
+            alert('Copied to Clipboard!');
+        }, function() {
+            alert('Failed to Copy!');
+        });
+    }
+    </script>
+</head>
+<body>
+    <h1> The Promptainer! </h1>
+    <div class="flex-container">
+    <label for="emotion">Emotion</label>
+    <select id="emotion">
+        <option value=""></option>
+
+        <optgroup label="Positive Mood Low Energy">
+            <option value="light">Light</option>
+            <option value="peaceful">Peaceful</option>
+            <option value="calm">Calm</option>
+            <option value="serene">Serene</option>
+            <option value="soothing">Soothing</option>
+            <option value="relaxed">Relaxed</option>
+            <option value="placid">Placid</option>
+            <option value="comforting">Comforting</option>
+            <option value="cosy">Cosy</option>
+            <option value="tranquil">Tranquil</option>
+            <option value="quiet">Quiet</option>
+            <option value="pastel">Pastel</option>
+            <option value="delicate">Delicate</option>
+            <option value="graceful">Graceful</option>
+            <option value="subtle">Subtle</option>
+            <option value="balmy">Balmy</option>
+            <option value="mild">Mild</option>
+            <option value="ethereal">Ethereal</option>
+            <option value="elegant">Elegant</option>
+            <option value="tender">Tender</option>
+            <option value="soft">Soft</option>
+            <option value="light">Light</option>
+            <option value=""></option>
+        </optgroup>
+
+        <optgroup label="Positive Mood High Energy">
+            <option value="bright">Bright</option>
+            <option value="vibrant">Vibrant</option>
+            <option value="dynamic">Dynamic</option>
+            <option value="spirited">Spirited</option>
+            <option value="vivid">Vivid</option>
+            <option value="lively">Lively</option>
+            <option value="energetic">Energetic</option>
+            <option value="colorful">Colorful</option>
+            <option value="joyful">Joyful</option>
+            <option value="romantic">Romantic</option>
+            <option value="expressive">Expressive</option>
+            <option value="rich">Rich</option>
+            <option value="kaleidoscopic">Kaleidoscopic</option>
+            <option value="psychedelic">Psychedelic</option>
+            <option value="saturated">Saturated</option>
+            <option value="ecstatic">Ecstatic</option>
+            <option value="brash">Brash</option>
+            <option value="exciting">Exciting</option>
+            <option value="passionate">Passionate</option>
+            <option value="hot">Hot</option>
+            <option value=""></option>
+        </optgroup>
+
+        <optgroup label="Negative Mood Low Energy">
+            <option value="muted">Muted</option>
+            <option value="bleak">Bleak</option>
+            <option value="funereal">Funereal</option>
+            <option value="somber">Somber</option>
+            <option value="melancholic">Melancholic</option>
+            <option value="mournful">Mournful</option>
+            <option value="gloomy">Gloomy</option>
+            <option value="dismal">Dismal</option>
+            <option value="sad">Sad</option>
+            <option value="pale">Pale</option>
+            <option value="washed-out">Washed-out</option>
+            <option value="desaturated">Desaturated</option>
+            <option value="grey">Grey</option>
+            <option value="subdued">Subdued</option>
+            <option value="dull">Dull</option>
+            <option value="dreary">Dreary</option>
+            <option value="depressing">Depressing</option>
+            <option value="weary">Weary</option>
+            <option value="tired">Tired</option>
+            <option value=""></option>
+        </optgroup>
+
+        <optgroup label="Negative Mood High Energy">
+            <option value="dark">Dark</option>
+            <option value="ominous">Ominous</option>
+            <option value="threatening">Threatening</option>
+            <option value="haunting">Haunting</option>
+            <option value="forbidding">Forbidding</option>
+            <option value="gloomy">Gloomy</option>
+            <option value="stormy">Stormy</option>
+            <option value="doom">Doom</option>
+            <option value="apocalyptic">Apocalyptic</option>
+            <option value="sinister">Sinister</option>
+            <option value="shadowy">Shadowy</option>
+            <option value="ghostly">Ghostly</option>
+            <option value="unnerving">Unnerving</option>
+            <option value="harrowing">Harrowing</option>
+            <option value="dreadful">Dreadful</option>
+            <option value="frightful">Frightful</option>
+            <option value="shocking">Shocking</option>
+            <option value="terror">Terror</option>
+            <option value="hideous">Hideous</option>
+            <option value="ghastly">Ghastly</option>
+            <option value="terrifying">Terrifying</option>
+            <option value=""></option>
+        </optgroup>
+
+    </select>
+</div>
+<br>
+
+<div class="flex-container">
+    <label for="size">Size-Y</label> 
+    <select id="size"> 
+        <option value=""></option>
+
+    <optgroup label="Big And Free">
+        <option value="curvaceous">Curvaceous</option> 
+        <option value="swirling">Swirling</option> 
+        <option value="organic">Organic</option> 
+        <option value="riotous">Riotous</option> 
+        <option value="turbulent">Turbulent</option> 
+        <option value="flowing">Flowing</option> 
+        <option value="amorphous">Amorphous</option> 
+        <option value="natural">Natural</option> 
+        <option value="distorted">Distorted</option> 
+        <option value="uneven">Uneven</option> 
+        <option value="random">Random</option> 
+        <option value="lush">Lush</option> 
+        <option value="organic">Organic</option> 
+        <option value="bold">Bold</option> 
+        <option value="intuitive">Intuitive</option> 
+        <option value="emotive">Emotive</option> 
+        <option value="chaotic">Chaotic</option> 
+        <option value="tumultuous">Tumultuous</option> 
+        <option value="earthy">Earthy</option> 
+        <option value="churning">Churning</option> 
+        <option value=""></option>
+    </optgroup>
+
+    <optgroup label="Big And Structured">
+        <option value="monumental">Monumental</option> 
+        <option value="imposing">Imposing</option> 
+        <option value="rigorous">Rigorous</option> 
+        <option value="geometric">Geometric</option> 
+        <option value="ordered">Ordered</option> 
+        <option value="angular">Angular</option> 
+        <option value="artificial">Artificial</option> 
+        <option value="lines">Lines</option> 
+        <option value="straight">Straight</option> 
+        <option value="rhythmic">Rhythmic</option> 
+        <option value="composed">Composed</option> 
+        <option value="unified">Unified</option> 
+        <option value="manmade">Manmade</option> 
+        <option value="perspective">Perspective</option> 
+        <option value="minimalist">Minimalist</option> 
+        <option value="blocks">Blocks</option> 
+        <option value="dignified">Dignified</option> 
+        <option value="robust">Robust</option> 
+        <option value="defined">Defined</option>
+        <option value=""></option>
+    </optgroup>
+
+    <optgroup label="Small And Free">
+        <option value="ornate">Ornate</option> 
+        <option value="delicate">Delicate</option> 
+        <option value="neat">Neat</option> 
+        <option value="precise">Precise</option> 
+        <option value="detailed">Detailed</option> 
+        <option value="opulent">Opulent</option> 
+        <option value="lavish">Lavish</option> 
+        <option value="elegant">Elegant</option> 
+        <option value="ornamented">Ornamented</option> 
+        <option value="fine">Fine</option> 
+        <option value="elaborate">Elaborate</option> 
+        <option value="accurate">Accurate</option> 
+        <option value="intricate">Intricate</option> 
+        <option value="meticulous">Meticulous</option> 
+        <option value="decorative">Decorative</option> 
+        <option value="realistic">Realistic</option> 
+        <option value=""></option>
+    </optgroup>
+
+    <optgroup label="Small And Structured">
+        <option value="unplanned">Unplanned</option> 
+        <option value="daring">Daring</option> 
+        <option value="brash">Brash</option> 
+        <option value="random">Random</option> 
+        <option value="casual">Casual</option> 
+        <option value="sketched">Sketched</option> 
+        <option value="playful">Playful</option> 
+        <option value="spontaneous">Spontaneous</option> 
+        <option value="extemporaneous">Extemporaneous</option> 
+        <option value="offhand">Offhand</option> 
+        <option value="improvisational">Improvisational</option> 
+        <option value="experimental">Experimental</option> 
+        <option value="loose">Loose</option> 
+        <option value="jaunty">Jaunty</option> 
+        <option value="light">Light</option> 
+        <option value="expressive">Expressive</option>
+        <option value=""></option>
+    </optgroup>
+
+        </select> 
+    </div>
+<br>
+
+<div class="flex-container">
+    <label for="vibe">Vibe</label> 
+        <select id="vibe">
+        <option value=""></option>
+    <optgroup label="Vaporwave">
+        <option value="neon">Neon</option>
+        <option value="pink">Pink</option>
+        <option value="blue">Blue</option>
+        <option value="geometric">Geometric</option>
+        <option value="futuristic">Futuristic</option>
+        <option value="80s">'80s</option>
+        <option value=""></option>
+    </optgroup>
+
+    <optgroup label="Post Apocalyptic">
+        <option value="grey">Grey</option>
+        <option value="desolate">Desolate</option>
+        <option value="stormy">Stormy</option>
+        <option value="fire">Fire</option>
+        <option value="decay">Decay</option>
+        <option value=""></option>
+    </optgroup>
+
+    <optgroup label="Gothic Fantasy">
+        <option value="stone">Stone</option>
+        <option value="dark">Dark</option>
+        <option value="lush">Lush</option>
+        <option value="nature">Nature</option>
+        <option value="mist">Mist</option>
+        <option value="mystery">Mystery</option>
+        <option value="angular">Angular</option>
+        <option value=""></option>
+    </optgroup>
+
+    <optgroup label="Cybernetic Sci-Fi">
+        <option value="glows">Glows</option>
+        <option value="greens">Greens</option>
+        <option value="metals">Metals</option>
+        <option value="armor">Armor</option>
+        <option value="chrome">Chrome</option>
+        <option value=""></option>
+    </optgroup>
+
+    <optgroup label="Steampunk">
+        <option value="gold">Gold</option>
+        <option value="copper">Copper</option>
+        <option value="brass">Brass</option>
+        <option value="Victoriana">Victoriana</option>
+        <option value=""></option>
+    </optgroup>
+
+    <optgroup label="Memphis">
+        <option value="Memphis Group">Memphis Group</option>
+        <option value="1980s">1980s</option>
+        <option value="bold">Bold</option>
+        <option value="kitch">Kitch</option>
+        <option value="colourful">Colourful</option>
+        <option value="shapes">Shapes</option>
+        <option value=""></option>
+    </optgroup>
+
+    <optgroup label="Dieselpunk">
+        <option value="grimy">Grimy</option>
+        <option value="steel">Steel</option>
+        <option value="oil">Oil</option>
+        <option value="50s">'50s</option>
+        <option value=""></option>
+    </optgroup>
+
+    <optgroup label="Cyberpunk">
+        <option value="1990s">1990s</option>
+        <option value="dyed hair">Dyed Hair</option>
+        <option value="spiky">Spiky</option>
+        <option value="graphic elements">Graphic Elements</option>
+        <option value=""></option>
+    </optgroup>
+
+    <optgroup label="Biopunk Organic">
+        <option value="greens">Greens</option>
+        <option value="slimes">Slimes</option>
+        <option value="plants">Plants</option>
+        <option value="futuristic">Futuristic</option>
+        <option value="weird">Weird</option>
+        <option value=""></option>
+    </optgroup>
+
+</select>
+</div>
+<br>
+
+<div class="flex-container">
+    <label for="proximity">Proximity</label>
+    <select id="proximity">
+        <option value=""></option>
+
+    <optgroup label="Close">
+        <option value="extreme close up">Extreme Close Up</option>
+        <option value="close up">Close Up</option>
+        <option value=""></option>
+    </optgroup>
+
+    <optgroup label="Mid">
+        <option value="medium shot">Medium shot</option>
+        <option value="mid shot">Mid shot</option>
+        <option value="waist shot">Waist shot</option>
+        <option value="head & shoulders shot">Head & Shoulders Shot</option>
+        <option value=""></option>
+    </optgroup>
+
+    <optgroup label="Far">
+        <option value="long shot">Long shot</option>
+        <option value="wide shot">Wide shot</option>
+        <option value="full shot">Full shot</option>
+        <option value="extreme long shot">Extreme Long Shot</option>
+        <option value="extreme wide shot">Extreme Wide Shot</option>
+        <option value="in the distance">In The Distance</option>
+        <option value=""></option>
+    </optgroup>
+
+    </select>
+    </div>
+<br>
+
+<div class="flex-container">
+    <label for="position">Position</label>
+    <select id="position">
+        <option value=""></option>
+
+    <optgroup label="Conventional Perspectives">
+        <option value="overhead">Overhead View</option>
+        <option value="establishing">Establishing Shot</option>
+        <option value="high angle">High Angle</option>
+        <option value="low angle">Low Angle</option>
+        <option value="over the shoulder">Over-the-Shoulder Shot</option>
+        <option value=""></option>
+    </optgroup>    
+
+    <optgroup label="Innovative Perspectives">
+        <option value="from above">From Above</option>
+        <option value="crane">Crane Shot</option>
+        <option value="from below">From Below</option>
+        <option value="worms eye view">Worm's Eye View</option>
+        <option value="aerial">Aerial View</option>
+        <option value="birds eye view">Bird's Eye View</option>
+        <option value="drone photography">Drone Photography</option>
+        <option value="tilted frame">Tilted Frame</option>
+        <option value="dutch angle">Dutch Angle</option>
+        <option value="skewed shot">Skewed Shot</option>
+        <option value=""></option>
+    </optgroup>
+
+    </select>
+    </div>
+<br>
+
+<div class="flex-container">
+    <label for="settings">Settings & Lenses</label> 
+    <select id="settings">
+        <option value=""></option>
+    <optgroup label="Shutter Speed">
+        <option value="">Fast shutter speed</option>
+        <option value="high speed">High speed</option>
+        <option value="action photo">Action photo</option>
+        <option value="1/1000 sec shutter">1/1000 sec shutter</option>
+        <option value="slow shutter speed">Slow shutter speed</option>
+        <option value="1 sec shutter">1 sec shutter</option>
+        <option value="long exposure">Long exposure</option>
+        <option value="motion blur">Motion blur</option>
+
+        <option value=""></option>
+    <optgroup label="Lense">
+        <option value="macro lens">Macro lens</option>
+        <option value="macro photo">Macro photo</option>
+        <option value="sigma 105mm f2.8">Sigma 105mm F2.8</option>
+        <option value="bokeh">Bokeh</option>
+        <option value="shallow depth of field">Shallow depth of field</option>
+        <option value="blur">Blur</option>
+        <option value="out of focus background">Out-of-focus background</option>
+        <option value="tilt shift photography">Tilt shift photography</option>
+        <option value="telephoto lens">Telephoto lens</option>
+        <option value="sigma 500mm f/5">Sigma 500mm f/5</option>
+        <option value="wide angle lens">Wide angle lens</option>
+        <option value="15mm">15mm</option>
+        <option value="fish eye lens">Fish-eye lens</option>
+        <option value="deep depth of field">Deep depth of field</option>
+        <option value="f/22">f/22</option>
+        <option value="35mm">35mm</option>
+        <option value=""></option>
+        </select>
+</div>
+<br>
+
+<div class="flex-container">
+    <label for="outdoor">Natural Light</label> 
+    <select id="outdoor">
+        <option value=""></option>
+        <option value="">Lighting</option>
+        <option value="golden hour">Golden Hour</option>
+        <option value="dusk">Dusk</option>
+        <option value="sunset">Sunset</option>
+        <option value="sunrise">Sunrise</option>
+        <option value="blue hour">Blue Hour</option>
+        <option value="twilight">Twilight</option>
+        <option value="cool">Cool</option>
+        <option value="iso1200">ISO1200</option>
+        <option value="slow shutter speed">Slow Shutter Speed</option>        <option value="midday">Midday</option>
+        <option value="harsh overhead sunlight">Harsh Overhead Sunlight</option>
+        <option value="directional sunlight">Directional Sunlight</option>
+        <option value="overcast">Overcast</option>
+        <option value="flat lighting">Flat Lighting</option>
+        <option value="mostly silhouetted">Mostly Silhouetted</option>
+        <option value="soft shadow">In Soft Shadow</option>
+        <option value="harsh sunlight">Harsh Sunlight</option>
+        <option value=""></option>
+      </select>
+</div>
+<br>
+
+<div class="flex-container">
+    <label for="indoor">Indoor Light</label> 
+    <select id="indoor">
+        <option value=""></option>
+
+        <optgroup label="Temperature">
+            <option value="warm">Warm Lighting</option>
+            <option value="2700K">2700K</option>
+            <option value="cold">Cold</option>
+            <option value="fluorescent">Fluorescent Lighting</option>
+            <option value="4800K">4800K</option>
+            <option value=""></option>
+        </optgroup>
+
+        <optgroup label="Special Effects">
+            <option value="flash">Flash Photography</option>
+            <option value="harsh">Harsh Flash</option>
+            <option value="colourful">Colourful Lighting</option>
+            <option value="defined">Defined Colours</option>
+            <option value="purple yellow">Purple And Yellow Lighting</option>
+            <option value="police">Police Car Lights</option>
+            <option value="fireworks">Fireworks</option>
+            <option value=""></option>
+        </optgroup>
+
+        <optgroup label="Direction">
+            <option value="lit above">Lit From Above</option>
+            <option value="lit below">Lit From Below</option>
+            <option value="side">Side Lighting</option>
+            <option value=""></option>
+        </optgroup>
+
+        <optgroup label="Intensity">
+            <option value="high key">High Key Lighting</option>
+            <option value="neutral">Neutral</option>
+            <option value="flat">Flat</option>
+            <option value="even">Even</option>
+            <option value=""></option>
+        </optgroup>
+
+        <optgroup label="Style">
+            <option value="corporate">Corporate</option>
+            <option value="professional">Professional</option>
+            <option value="ambient">Ambient</option>
+            <option value="low key">Low Key Lighting</option>
+            <option value="dramatic">Dramatic</option>
+            <option value="single source">Single Light Source</option>
+            <option value="high contrast">High Contrast</option>
+            <option value=""></option>
+        </optgroup>
+
+        <optgroup label="Backlighting">
+            <option value="backlighting">Backlighting</option>
+            <option value="backlit">Backlit</option>
+            <option value=""></option>
+        </optgroup>
+
+        <optgroup label="Studio">
+            <option value="studio">Studio Lighting</option>
+            <option value="professional studio">Professional Lighting</option>
+            <option value="studio portrait">Studio Portrait</option>
+            <option value="well lit">Well Lit</option>
+            <option value=""></option>
+        </optgroup>
+    </select>
+</div>
+<br>
+
+<div class="flex-container">
+<label for="process">Processing</label> 
+<select id="process">
+        <option value=""></option>
+
+    <optgroup label="Modern Photography">
+        <option value="autochrome">Autochrome</option>
+        <option value="hotpinks">Hot Pinks</option>
+        <option value="queasy">Queasy Yellow-Greens</option>
+        <option value="disposable">Disposable Camera</option>
+        <option value="amateur">Authentically Amateur Composition</option>
+        <option value=""></option>
+    </optgroup>
+    
+    <optgroup label="Colorful Photography">
+        <option value="kodachrome">Kodachrome</option>
+        <option value="strong">Strong Reds And Greens</option>
+        <option value="lomography">Lomography</option>
+        <option value="oversaturated">Oversaturated</option>
+        <option value="hueshifted">Hue-Shifted</option>
+        <option value=""></option>
+    </optgroup>
+    
+    <optgroup label="Instant Photography">
+        <option value="polaroid">Polaroid</option>
+        <option value="instax">Instax</option>
+        <option value="soft">Soft Focus</option>
+        <option value="squareflashy">Square And Flash-Y</option>
+        <option value=""></option>
+    </optgroup>
+    
+    <optgroup label="Digital Photography">
+        <option value="cameraphone">Cameraphone</option>
+        <option value="fuzzy">Fuzzy, Early Digital Photography</option>
+        <option value="cctv">CCTV</option>
+        <option value="surveillance">Surveillance</option>
+        <option value="securityfootage">Security Footage</option>
+        <option value=""></option>
+    </optgroup>
+    
+    <optgroup label="Automotive Photography">
+        <option value="dashcam">Dashcam</option>
+        <option value=""></option>
+    </optgroup>
+    
+    <optgroup label="Monochrome Photography">
+        <option value="blackwhite">Black-And-White</option>
+        <option value="daguerrotype">Daguerrotype</option>
+        <option value="earlyfilm">Very Early Film Stock</option>
+        <option value=""></option>
+    </optgroup>
+    
+    <optgroup label="Vintage Photography">
+        <option value="1800s">1800s</option>
+        <option value="vintage">Vintage</option>
+        <option value="cameraobscura">Camera Obscura</option>
+        <option value="pinholephotography">Pinhole Photography</option>
+        <option value="doubleexposure">Double Exposure</option>
+        <option value=""></option>
+    </optgroup>
+
+</select>
+</div>
+<br>
+
+<div class="flex-container">
+    <label for="type">Film Type</label> 
+    <select id="type">
+        <option value=""></option>
+        <option value="cyanotype">Cyanotype</option>
+        <option value="blue-and-white">Blue-and-white photo printing method</option>
+        <option value="black-and-white">Black and white, Tri-X 400TX</option>
+        <option value="monochrome">Classic monochrome photography</option>
+        <option value="redscale">Redscale photography</option>
+        <option value="red-filter">Makes things red, then more red.</option>
+        <option value="infrared">Infrared photography</option>
+        <option value="pink-plants">Weird film that makes plants pink</option>
+        <option value="bleach-bypass">Bleach bypass</option>
+        <option value="muted-look">Muted look from Saving P'vt Ryan.</option>
+        <option value="faux-retro">Instagram, Hipstamatic, 2015</option>
+        <option value="contact-sheet">Contact sheet, multiple images!</option>
+        <option value="colour-splash">Colour splash</option>
+        <option value="solarised">Solarised</option>
+        <option value="anaglyph">Anaglyph</option>
+        <option value=""></option>
+    </select>
+</div>
+<br>
+
+<div class="flex-container">
+    <label for="genre">Genre & Context</label> 
+    <select id="genre">
+        <option value=""></option>
+        <option value="action sports photography">Action Sports Photography</option>
+        <option value="fast editorial fashion photography">Fast Editorial Fashion Photography</option>
+        <option value="candid street portrait">Candid Street Portrait</option>
+        <option value="shutter speed from ESPN">Shutter Speed from ESPN</option>
+        <option value="from Vogue magazine">From Vogue Magazine</option>
+        <option value="photojournalism from The New York Times">Photojournalism from The New York Times</option>
+        <option value="professional corporate portrait">Professional Corporate Portrait</option>
+        <option value="from investor prospectus">From Investor Prospectus</option>
+        <option value="flash photography">Flash Photography</option>
+        <option value="event photography">Event Photography</option>
+        <option value="film premier">Film Premier</option>
+        <option value="photograph from celebrity news website">Photograph from Celebrity News Website</option>
+        <option value=""></option>
+      </select>
+</div>
+<br>
+
+<div class="flex-container">
+    <label for="illustration">Illustration Style</label>
+    <select id="illustration">
+        <option value=""></option>
+
+    <optgroup label="Stencil Art">
+        <option value="stencil">Stencil</option>
+        <option value="street art">Street Art</option>
+        <option value="banksy">Banksy</option>
+        <option value=""></option>
+    </optgroup>
+
+    <optgroup label="Sketches">
+        <option value="charcoal sketch">Charcoal Sketch</option>
+        <option value="ballpoint pen art">Ballpoint Pen Art</option>
+        <option value="pencil sketch">Pencil Sketch</option>
+        <option value="pencil drawing">Pencil Drawing</option>
+        <option value=""></option>
+    </optgroup>
+
+    <optgroup label="Cartoons">
+        <option value="political cartoon">Political Cartoon From U.S. Newspaper</option>
+        <option value="woodcut">Woodcut</option>
+        <option value="field journal line art">Field Journal Line Art</option>
+        <option value="colouring in sheet">Colouring-in Sheet</option>
+        <option value="etching">Etching</option>
+        <option value="crayon">Crayon</option>
+        <option value=""></option>
+    </optgroup>
+
+    <optgroup label="Paintings">
+        <option value="oil painting">Oil Painting</option>
+        <option value="childs drawing">Child's Drawing</option>
+        <option value="acrylic on canvas">Acrylic On Canvas</option>
+        <option value="watercolor">Watercolor</option>
+        <option value="coloured pencil detailed">Coloured Pencil Detailed</option>
+        <option value="airbrush">Airbrush</option>
+        <option value="ukiyo e">Ukiyo-e</option>
+        <option value="chinese watercolor">Chinese Watercolor</option>
+        <option value="pastels">Pastels</option>
+        <option value=""></option>
+    </optgroup>
+
+    <optgroup label="Corporate Art">
+        <option value="alegria corporate">Alegria</option>
+        <option value="corporate memphis">Corporate Memphis</option>
+        <option value=""></option>
+    </optgroup>
+
+    <optgroup label="Collages">
+        <option value="collage">Collage</option>
+        <option value="photocollage">Photocollage</option>
+        <option value="magazine collage">Magazine Collage</option>
+        <option value=""></option>
+    </optgroup>
+
+    <optgroup label="Digital Art">
+        <option value="vector art">Vector Art</option>
+        <option value="watercolor pen">Watercolor & Pen</option>
+        <option value="screen printing">Screen Printing</option>
+        <option value="low poly">Low Poly</option>
+        <option value="layered paper">Layered Paper</option>
+        <option value="sticker illustration">Sticker Illustration</option>
+        <option value="storybook">Storybook</option>
+        <option value="digital painting">Digital Painting</option>
+        <option value=""></option> 
+    </optgroup>
+
+    <optgroup label="Technical Drawings">
+        <option value="blueprint">Blueprint</option>
+        <option value="patent drawing">Patent Drawing</option>
+        <option value="cutaway">Cutaway</option>
+        <option value="ikea manual">IKEA Manual</option>
+        <option value="instruction manual">Instruction Manual</option>
+        <option value=""></option>
+    </optgroup>
+
+    <optgroup label="3D Illustrations">
+        <option value="illustrations 3d textured">Illustrations 3D Textured</option>
+        <option value="isometric 3d">Isometric 3D</option>
+        <option value="3d render">3D Render</option>
+        <option value="houdini 3d">Houdini 3D</option>
+        <option value="octane 3d">Octane 3D</option>
+        <option value="zbrush">ZBrush</option>
+        <option value="maya">Maya</option>
+        <option value="cinema 4d">Cinema 4D</option>
+        <option value="blender">Blender</option>
+        <option value=""></option>
+    </optgroup>
+
+    <optgroup label="Special Art">
+        <option value="scratch art">Scratch Art</option>
+        <option value="foil art">Foil Art</option>
+        <option value="gold on black">Gold On Black</option>
+        <option value="claymation">Claymation</option>
+        <option value="aardman animation">Aardman Animation</option>
+        <option value="felt pieces">Felt Pieces</option>
+        <option value="fabric pattern">Fabric Pattern</option>
+        <option value="black velvet">Black Velvet</option>
+        <option value="edgar leeteg">Edgar Leeteg</option>
+        <option value="perler beads">Perler Beads</option>
+        <option value="screenshot">Screenshot Of</option>
+        <option value="tattoo">Tattoo</option>
+        <option value=""></option>
+    </optgroup>
+
+    <optgroup label="Character Art">
+        <option value="character reference sheet">Character Reference Sheet</option>
+        <option value="comic book art">Comic Book Art</option>
+        <option value="anime">Anime</option>
+        <option value="pixar">Pixar</option>
+        <option value="studio ghibli">Studio Ghibli</option>
+        <option value="vintage disney">Vintage Disney</option>
+        <option value="pixel art">Pixel Art</option>
+        <option value="1990s disney">1990s Disney</option>
+        <option value="cel shading">Cel Shading</option>
+        <option value=""></option>
+    </optgroup>
+
+    <optgroup label="Vintage Art">
+        <option value="1970s">1970s</option>
+        <option value="grainy vintage illustration">Grainy Vintage Illustration</option>
+        <option value="hanna barbera">Hanna Barbera</option>
+        <option value="1960s">1960s</option>
+        <option value="scooby doo">Scooby Doo</option>
+        <option value="flintstones">Flintstones</option>
+        <option value="jetsons">Jetsons</option>
+        <option value=""></option>
+    </optgroup>
+
+    </select>
+    </div>
+<br>
+
+<div class="flex-container">
+    <label for="tv">TV Style</label> 
+    <select id="tv">
+        <option value=""></option>
+        <option value="south-park">South Park</option>
+        <option value="the-simpsons">The Simpsons</option>
+        <option value="spirited-away">Spirited Away</option>
+        <option value="family-guy">Family Guy</option>
+        <option value="bojack-horseman">Bojack Horseman</option>
+        <option value="adventure-time">Adventure Time</option>
+        <option value="powerpuff-girls">Powerpuff Girls</option>
+        <option value="vintage-looney-tunes">Vintage Looney Tunes (1961)</option>
+        <option value="pixar-up">Pixar's 'Up'</option>
+        <option value="the-far-side">The Far Side (print comic)</option>
+        <option value="beatrix-potter">Beatrix Potter Peter Rabbit</option>
+        <option value="quentin-blake">Quentin Blake from Roald Dahl books</option>
+        <option value="hayao-miyazaki">Hayao Miyazaki (Studio Ghibli)</option>
+        <option value="bill-watterson">Bill Watterson (Calvin & Hobbes)</option>
+        <option value="maurice-sendak">M. Sendak (Where the Wild Things Are)</option>
+        <option value="ralph-steadman">Ralph Steadman (Fear & Loathing)</option>
+        <option value="norman-rockwell">Norman Rockwell</option>
+        <option value="dr-seuss">Dr. Seuss</option>
+        <option value="tove-jansson">Tove Jansson (The Moomins)</option>
+        <option value="wanda-gag">Wanda Gag</option>
+        <option value=""></option>
+        </select>
+    </div>
+<br>
+
+<div class="flex-container">
+    <label for="history">History</label> 
+    <select id="history">
+        <option value=""></option>
+
+      <optgroup label="Early art history">
+        <option value="ancient">Ancient</option>
+        <option value="medieval">Medieval</option>
+        <option value="dark-ages">Dark Ages</option>
+        <option value=""></option>
+      </optgroup>
+
+      <optgroup label="Cave paintings">
+        <option value="prehistoric">Pre-historic</option>
+        <option value="lascaux">Lascaux</option>
+        <option value="primitive">Primitive</option>
+      </optgroup>
+
+      <optgroup label="Ancient Egyptian mural">
+        <option value="tomb">Tomb</option>
+        <option value="fresco">Fresco</option>
+        <option value="register">Register</option>
+        <option value="hieroglyphics">Hieroglyphics</option>
+        <option value=""></option>
+      </optgroup>
+
+      <optgroup label="Ancient Egypt papyrus">
+        <option value="book-of-the-dead">Book of the Dead</option>
+        <option value="well-preserved">Well-preserved</option>
+        <option value=""></option>
+      </optgroup>
+
+      <optgroup label="Fayum portrait">
+        <option value="mummy-portrait">Mummy portrait</option>
+        <option value="from-egypt">From Egypt</option>
+        <option value="from-luxor">From Luxor</option>
+        <option value="on-wood">On wood</option>
+        <option value=""></option>
+      </optgroup>
+
+      <optgroup label="Decorative Minoan mural">
+        <option value="2000-bce">2000 BCE</option>
+        <option value="artefact">Artefact</option>
+        <option value="ancient">Ancient</option>
+        <option value=""></option>
+      </optgroup>
+
+      <optgroup label="Roman mosaic">
+        <option value="ancient-rome">Ancient Rome</option>
+        <option value="opus-tesellatum">Opus tesellatum</option>
+        <option value=""></option>
+      </optgroup>
+
+      <optgroup label="Byzantine icon">
+        <option value="painting">Painting</option>
+        <option value="eastern-roman">Eastern Roman</option>
+        <option value="christian-icon">Christian icon</option>
+        <option value=""></option>
+      </optgroup>
+
+      <optgroup label="Gilded codex">
+        <option value="lavish">Lavish</option>
+        <option value="eliminated">Eliminated</option>
+        <option value="manuscript">Manuscript</option>
+        <option value="vellum">Vellum</option>
+        <option value="well-preserved">Well-preserved</option>
+        <option value=""></option>
+      </optgroup>
+
+      <optgroup label="Ancient Roman painting">
+        <option value="fourth-style">Fourth Style</option>
+        <option value="third-style">Third Style</option>
+        <option value="second-style">Second Style</option>
+        <option value="pompeii">Pompeii</option>
+        <option value=""></option>
+      </optgroup>
+
+      <optgroup label="Nuremberg Chronicle">
+        <option value="1493">1493</option>
+        <option value="liber-chronicarum">Liber Chronicarum</option>
+        <option value="michael-wolgemut">Michael Wolgemut</option>
+        <option value="halo">Halo</option>
+        <option value=""></option>
+      </optgroup>
+
+      <optgroup label="Renaissance - modern art movements">
+        <option value="renaissance-painting">Renaissance painting</option>
+        <option value="mannerism">Mannerism</option>
+        <option value="art-nouveau">Art Nouveau</option>
+        <option value="baroque">Baroque</option>
+        <option value="rococo">Rococo</option>
+        <option value="neoclassicism">Neoclassicism</option>
+        <option value="symbolist-painting">Symbolist painting</option>
+        <option value="realism">Realism</option>
+        <option value="impressionism">Impressionism</option>
+        <option value="post-impressionism">Post-impressionism</option>
+        <option value=""></option>
+      </optgroup>
+
+      <optgroup label="Modern art movements">
+        <option value="bauhaus">Bauhaus</option>
+        <option value="art-deco">Art deco</option>
+        <option value="abstract-expressionism">Abstract expressionism</option>
+        <option value="colour-field-painting">Colour field painting</option>
+        <option value="cubism">Cubism</option>
+        <option value="constructivist">Constructivist</option>
+        <option value="dada">Dada</option>
+        <option value="de-stijl">De Stijl</option>
+        <option value="fauvism">Fauvism</option>
+        <option value="futurism">Futurism</option>
+        <option value="suprematism">Suprematism</option>
+        <option value="metaphysical-painting">Metaphysical painting</option>
+        <option value="surrealism">Surrealism</option>
+        <option value="pop-art">Pop Art</option>
+        <option value="street-art">Street art</option>
+        <option value="mexican-muralism">Mexican muralism</option>
+        <option value="neo-expressionism">Neo-Expressionism</option>
+        <option value="orphism">Orphism</option>
+        <option value="street-photography">Street photography</option>
+        <option value=""></option>
+      </optgroup>
+
+    </select>
+</div>
+<br>
+
+<div class="flex-container">
+    <label for="artists">Artist</label> 
+    <select id="artists">
+          <option value=""></option>
+
+        <optgroup label="Famous Artists">
+          <option value="salvador-dali">Salvador Dali</option>
+          <option value="edward-hopper">Edward Hopper, 1942</option>
+          <option value="keith-haring">Keith Haring</option>
+          <option value="georges-surat">Georges Surat</option>
+          <option value="vincent-van-gogh">Vincent van Gogh</option>
+          <option value=""></option>
+        </optgroup>
+
+        <optgroup label="More distinctive artist styles">
+            <option value="george-hurrell">George Hurrell</option>
+            <option value="martin-schoeller">Martin Schoeller</option>
+            <option value="dorothea-lange">Dorothea Lange</option>
+            <option value="lee-jeffries">Lee Jeffries</option>
+            <option value="terry-richardson">Terry Richardson</option>
+            <option value="thomas-kinkade">Thomas Kinkade</option>
+            <option value="lisa-frank">Lisa Frank</option>
+            <option value="basquiat">Basquiat</option>
+            <option value="simon-stalenhag">Simon Stalenhag</option>
+            <option value="zdzislaw-beksinski">Zdzislaw Beksinski</option>
+            <option value="hr-giger">HR Giger</option>
+            <option value="robert-crumb">Robert Crumb</option>
+            <option value=""></option>
+        </optgroup>
+
+        <optgroup label="Other">
+          <option value="hieronymus-bosch">Hieronymus Bosch</option>
+          <option value="gustav-klimt">Gustav Klimt</option>
+          <option value="roy-lichenstein">Roy Lichenstein</option>
+          <option value=""></option>
+        </optgroup>
+
+      </select>
+</div>
+<br>
+
+<div class="flex-container">
+    <label for="artwork">Artwork</label> 
+    <select id="artwork">
+            <option value=""></option>
+
+        <optgroup label="3D artwork">
+          <option value="sculpture">Sculpture</option>
+          <option value="statue">Statue</option>
+          <option value=""></option>
+        </optgroup>
+
+        <optgroup label="Sculpture & statue material examples">
+          <option value="bronze">Bronze statue</option>
+          <option value="marble">Marble statue</option>
+          <option value="terracotta">Terracotta warriors</option>
+          <option value="jade">Jade sculpture</option>
+          <option value=""></option>
+
+        </optgroup>
+        <optgroup label="Gold, silver">
+          <option value="gold">Gold</option>
+          <option value="silver">Silver</option>
+          <option value=""></option>
+        </optgroup>
+
+        <optgroup label="Butter sculpture, Sand sculpture">
+          <option value="butter">Butter sculpture</option>
+          <option value="sand">Sand sculpture</option>
+          <option value=""></option>
+        </optgroup>
+
+        <optgroup label="Topiary, plant sculpture, Ice carving">
+          <option value="topiary">Topiary</option>
+          <option value="plant">Plant sculpture</option>
+          <option value="ice">Ice carving</option>
+          <option value=""></option>
+        </optgroup>
+
+        <optgroup label="Plastic, fiberglass">
+          <option value="plastic">Plastic</option>
+          <option value="fiberglass">Fiberglass</option>
+          <option value=""></option>
+        </optgroup>
+
+        <optgroup label="Things for human bodies">
+          <option value="clothes">Clothes</option>
+          <option value="shoes">Shoes</option>
+          <option value="individual-clothing-items">Individual clothing items</option>
+          <option value=""></option>
+        </optgroup>
+
+        <optgroup label="Costumes, outfits, costumery">
+          <option value="costumes">Costumes</option>
+          <option value="outfits">Outfits</option>
+          <option value="costumery">Costumery</option>
+          <option value=""></option>
+        </optgroup>
+
+        <optgroup label="Hairstyles, haircuts">
+          <option value="hairstyles">Hairstyles</option>
+          <option value="haircuts">Haircuts</option>
+          <option value=""></option>
+        </optgroup>
+
+        <optgroup label="theatrical, Halloween, cosplay">
+          <option value="theatrical">Theatrical</option>
+          <option value="halloween">Halloween</option>
+          <option value="cosplay">Cosplay</option>
+          <option value=""></option>
+        </optgroup>
+
+        <optgroup label="Nail art">
+          <option value="nail-art">Nail art</option>
+          <option value=""></option>
+        </optgroup>
+
+        <optgroup label="Accessories, bags">
+          <option value="accessories">Accessories</option>
+          <option value="bags">Bags</option>
+          <option value=""></option>
+        </optgroup>
+        <optgroup label="Tattoos and body art">
+          <option value="tattoos">Tattoos</option>
+          <option value="body-art">Body art</option>
+          <option value=""></option>
+        </optgroup>
+
+        <optgroup label="Fashion, fashion photography, fashion & haute couture">
+          <option value="fashion">Fashion</option>
+          <option value="fashion-photography">Fashion photography</option>
+          <option value="haute-couture">Haute couture</option>
+          <option value=""></option>
+        </optgroup>
+
+        <optgroup label="Historic / futuristic attire, Jewellery, necklace, rings, etc">
+          <option value="historic-attire">Historic attire</option>
+          <option value="futuristic-attire">Futuristic attire</option>
+          <option value="jewellery">Jewellery</option>
+          <option value="necklace">Necklace</option>
+          <option value="rings">Rings</option>
+          <option value=""></option>
+        </optgroup>
+
+        <optgroup label="armor, technology, alternate history, imaginary culture, fantasy">
+          <option value="armor">Armor</option>
+          <option value="technology">Technology</option>
+          <option value="alternate-history">Alternate history</option>
+          <option value="imaginary-culture">Imaginary culture</option>
+          <option value="fantasy">Fantasy</option>
+          <option value=""></option>
+        </optgroup>
+
+        <optgroup label="Makeup, cosmetics, face paint">
+          <option value="makeup">Makeup</option>
+          <option value="cosmetics">Cosmetics</option>
+          <option value="face-paint">Face paint</option>
+          <option value=""></option>
+        </optgroup>
+
+      </select>
+</div>
+<br>
+
+<div class="flex-container">
+    <label for="places">Places & Spaces</label> 
+    <select id="places">
+            <option value=""></option>
+
+        <optgroup label="Architecture, buildings, wings">
+          <option value="skyscrapers">Skyscrapers</option>
+          <option value="museums">Museums</option>
+          <option value="libraries">Libraries</option>
+          <option value=""></option>
+        </optgroup>
+
+        <optgroup label="Stage sets, theatrical sets, TV sets">
+          <option value="theater">Theater</option>
+          <option value="film">Film</option>
+          <option value="television">Television</option>
+          <option value=""></option>
+        </optgroup>
+
+        <optgroup label="Domestic interiors, home design">
+          <option value="living-room">Living room</option>
+          <option value="kitchen">Kitchen</option>
+          <option value="bedroom">Bedroom</option>
+          <option value=""></option>
+        </optgroup>
+
+        <optgroup label="Commercial interiors, hospitality, public buildings, workplaces">
+          <option value="hotels">Hotels</option>
+          <option value="restaurants">Restaurants</option>
+          <option value="offices">Offices</option>
+          <option value=""></option>
+        </optgroup>
+
+        <optgroup label="Public realm, streets, squares, plazas, cityscapes">
+          <option value="parks">Parks</option>
+          <option value="streets">Streets</option>
+          <option value="squares">Squares</option>
+          <option value=""></option>
+        </optgroup>
+
+        <optgroup label="Gardens, landscaping, natural, outdoor spaces">
+          <option value="gardens">Gardens</option>
+          <option value="pools">Pools</option>
+          <option value="patios">Patios</option>
+          <option value=""></option>
+        </optgroup>
+
+        <optgroup label="Inflatables, parade floats, hot air balloons">
+          <option value="parades">Parades</option>
+          <option value="festivals">Festivals</option>
+          <option value="carnivals">Carnivals</option>
+          <option value=""></option>
+        </optgroup>
+
+        <optgroup label="Attractions, installations, theme parks, educational spaces, venues">
+          <option value="theme-parks">Theme parks</option>
+          <option value="museums">Museums</option>
+          <option value="exhibitions">Exhibitions</option>
+          <option value=""></option>
+        </optgroup>
+        
+        <optgroup label="Furniture, furnishings, rugs, sofas, beds, curtains, etcetera">
+          <option value="chairs">Chairs</option>
+          <option value="tables">Tables</option>
+          <option value="beds">Beds</option>
+          <option value=""></option>
+        </optgroup>
+
+        <optgroup label="Events, festivals, event design, event planning, event decoration">
+          <option value="concerts">Concerts</option>
+          <option value="weddings">Weddings</option>
+          <option value="parties">Parties</option>
+          <option value=""></option>
+        </optgroup>
+
+      </select>
+</div>
+<br>
+
+<div class="flex-container">
+    <label for="crafty">Crafty Arts</label> 
+    <select id="crafty">
+        <option value=""></option>
+
+        <optgroup label="Paper & Textiles">
+          <option value="papercraft">Papercraft</option>
+          <option value="origami">Origami</option>
+          <option value="diorama">Diorama</option>
+          <option value="dolls house">Dolls House</option>
+          <option value="pop up book">Pop-up Book</option>
+          <option value="paper embossing">Paper Embossing</option>
+          <option value="papier mache">Papier Mache</option>
+          <option value="needle felting">Needle Felting</option>
+          <option value="applique needlework">Applique Needlework</option>
+          <option value="embroidery">Embroidery</option>
+          <option value="knitting patterns">Knitting Patterns</option>
+          <option value="amigurumi">Amigurumi</option>
+          <option value=""></option>
+        </optgroup>
+
+        <optgroup label="Ceramics & Glass">
+          <option value="ceramic bust">Ceramic Bust</option>
+          <option value="kintsugi">Kintsugi</option>
+          <option value="clay pottery sculpture">Clay Pottery Sculpture</option>
+          <option value="porcelain">Porcelain</option>
+          <option value="azulejo">Azulejo</option>
+          <option value="stained glass">Stained Glass</option>
+          <option value="glass paperweight">Glass Paperweight</option>
+          <option value="snowglobe">Snowglobe</option>
+          <option value="bubblegram">Bubblegram</option>
+          <option value="crystal figure">Crystal Figure</option>
+          <option value="tile art mosaic">Tile Art Mosaic</option>
+          <option value=""></option>
+        </optgroup>
+
+      </select>
+</div>
+<br>
+
+    <button onclick="createSentence()">Create Sentence</button>
+    <p id="sentence"></p>
+    <button id="copyBtn" onclick="copyToClipboard()">Copy Sentence</button>
+</body>
+</html>
